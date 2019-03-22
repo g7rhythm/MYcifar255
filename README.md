@@ -29,3 +29,29 @@ Apache License
 
 https://github.com/tensorflow/tensorflow/blob/master/LICENSE
 
+
+
+-------en---------
+
+# MYcifar255 profile
+1. Improved according to the tensorflow-cifar10 example to accommodate more pictures and classifications.2. Improve the generation mechanism of packing pictures into Bin files
+
+# Deployment
+Python 3.5
+Numpy = = 1.12.0
+Tensorflow = = 1.2.1
+
+# Usage steps 
+
+Step 1: download the training data set (more than 200 image categories, image source: ILSVRC2012, image compressed)
+https://pan.baidu.com/s/1bDgwtiwNjYOHNCoBOXcEbA extracted code: s1yw
+Step 2: run genar_train_data.py where path of the training set is modified
+Step 3: run the cifar10_train.py
+
+# Test
+Cifar10_imagenet_eval.Py
+The effect of the model was evaluated using the training set
+
+Cifar10_runsingle.Py
+Identify a single image for classification
+
