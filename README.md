@@ -23,6 +23,7 @@ cifar10_imagenet_eval.py
 cifar10_runsingle.py
 单独识别一张图片分类
 
+详细解说文章：https://www.cnblogs.com/7rhythm/p/7091624.html  源代码与文章中代码片段已经有所不同，注意区分
 
 # license
 Apache License
@@ -54,4 +55,6 @@ The effect of the model was evaluated using the training set
 
 Cifar10_runsingle.Py
 Identify a single image for classification
+
+explanation article: https://www.cnblogs.com/7rhythm/p/7091624.html （source code and article code snippet is different, pay attention to distinguish）
 
