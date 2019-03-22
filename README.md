@@ -3,7 +3,9 @@
 
 # Deployment
 python 3.5
+
 numpy==1.12.0
+
 tensorflow==1.2.1
 
 # 使用步骤
