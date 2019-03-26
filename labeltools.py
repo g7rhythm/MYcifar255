@@ -32,8 +32,7 @@ def getfilelist(data_dir):
 def PackageMultImageIntoBin(files,allFilesDir,targetpath):
     if tf.gfile.Exists(targetpath):
         tf.gfile.DeleteRecursively(targetpath)
-    else:
-        tf.gfile.MakeDirs(targetpath)
+    tf.gfile.MakeDirs(targetpath)
     from PIL import Image
     import numpy as np
     maxLabelCount=255
@@ -50,30 +49,36 @@ def PackageMultImageIntoBin(files,allFilesDir,targetpath):
     print("shuffle files start")
     files=shuffle(files)
     for imgsrc in files:
-      im = Image.open(imgsrc)
-      im = im.resize((resetW, resetH))
-      im = np.array(im,np.uint8)
-      r = im[:, :, 0].flatten()
-      g = im[:, :, 1].flatten()
-      b = im[:, :, 2].flatten()
-      fileByloneLabel=str(imgsrc).split("/")[-2]
-      find=categoryDic.get(fileByloneLabel,-1)
-      if find ==-1:
-          continue
-      label=[find]
-      temp=list(label) + list(r) + list(g) + list(b)
-      if len(temp)!=3*32*32+1:
-          print("打包数组总数不能超过原总数")
-          return
-      batch+=temp
+        try:
+            im = Image.open(imgsrc)
+            im = im.resize((resetW, resetH))
+            im = np.array(im,np.uint8)
+            r = im[:, :, 0].flatten()
+            g = im[:, :, 1].flatten()
+            b = im[:, :, 2].flatten()
+            fileByloneLabel=str(imgsrc).split("/")[-2]
+            find=categoryDic.get(fileByloneLabel,-1)
+            if find ==-1:
+              continue
+            label=[find]
+            temp=list(label) + list(r) + list(g) + list(b)
+            if len(temp)!=3*32*32+1:
+              print("打包数组总数不能超过原总数")
+              return
+            batch+=temp
 
-      if(i%2000==0):
-          out = np.array(batch, np.uint8)
-          c+=1
-          out.tofile(targetpath + "/eval_batch_"+str(c)+".bin")
-          print("out:%s" % (len(out)))
-          batch = []
-      i+=1
+            if(i%2000==0):
+              out = np.array(batch, np.uint8)
+              c+=1
+              out.tofile(targetpath + "/eval_batch_"+str(c)+".bin")
+              print("out:%s" % (len(out)))
+              batch = []
+            i+=1
+        except Exception as e:
+            print(e)
+            print('error imgsrc:%s'%imgsrc)
+
+
 
 def shuffle(lis):
     import  random
