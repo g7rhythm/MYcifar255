@@ -10,8 +10,8 @@ tensorflow==1.2.1
 
 # 使用步骤
 第一步：下载训练数据集  （200多种图片分类，图片来源：ILSVRC2012，图片压缩过）
-链接：https://pan.baidu.com/s/1HXXC6ZygePUs9edqkgST8A  （2021.12.01已更新）
-提取码：46j2
+链接：https://pan.baidu.com/s/1lbM9-qs1BA2rzRFviZ3t6A （2021.12.02已更新）
+提取码：59al
 
 第二步：运行genar_train_data.py 其中训练集路径记得修改一下
 
