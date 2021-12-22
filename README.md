@@ -46,7 +46,7 @@ Tensorflow = = 1.2.1
 # Usage steps 
 
 Step 1: download the training data set (more than 200 image categories, image source: ILSVRC2012, image compressed)
-https://pan.baidu.com/s/1bDgwtiwNjYOHNCoBOXcEbA extracted code: s1yw
+https://pan.baidu.com/s/1lbM9-qs1BA2rzRFviZ3t6A extracted code: 59al
 Step 2: run genar_train_data.py where path of the training set is modified
 Step 3: run the cifar10_train.py
 
