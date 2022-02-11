@@ -10,7 +10,7 @@ olefile==0.44
 opencv-python==3.3.0
 packaging==16.8
 Pillow==4.0.0
-protobuf==3.2.0
+protobuf==3.15.0
 PyInstaller==3.2.1
 pyparsing==2.2.0
 pypiwin32==219
