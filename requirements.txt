@@ -17,6 +17,6 @@ pypiwin32==219
 pyreadline==2.1
 redis==2.10.6
 six==1.10.0
-tensorflow==1.2.1
+tensorflow==2.6.4
 tensorflow-tensorboard==0.1.8
 Werkzeug==0.11.15
